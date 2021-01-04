@@ -8,7 +8,8 @@ body {
     background-image: url(../assets/food-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    color: #e6e6e6;
 }
 
 #content {
@@ -39,7 +40,6 @@ header {
 
 #nav-links {
     list-style-type: none;
-    font-family: 'Quicksand', sans-serif;
 }
 
 #nav-links li {
@@ -56,17 +56,16 @@ a {
     text-align: center;
 }
 
-#homepage p:first-child {
+#homepage h2 {
     font-family: 'Tangerine', cursive;
     font-size: 9rem;
     margin-bottom: -25px;
-    color: rgba(255, 255, 255, .75);
+    color: #e6e6e6;
 }
 
-#homepage p:nth-of-type(2) {
-    font-family: 'Quicksand', sans-serif;
+#homepage p {
     font-size: .915rem;
-    color: rgba(255, 255, 255, .65);
+    color: #e6e6e6;
 }
 
 button {
@@ -92,9 +91,97 @@ button:active {
     box-shadow: inset 0 0.6em 2em -0.3em rgba(0,0,0,0.25), inset 0 0 0em 0.05em rgba(255,255,255,0.12);
 }
 
+#menu-page {
+    max-height: 480px;
+    overflow-y: scroll;
+}
+
+.menus {
+    max-width: 50%;
+    margin: auto;
+}
+
+.menus article {
+    margin-bottom: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.menu-and-price {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    grid-column-gap: 5px;
+    font-weight: 600;
+}
+
+.menu-and-price span:nth-of-type(1) {
+    justify-self: start;
+    font-size: 1.2rem;
+}
+
+.menu-and-price span:nth-of-type(2) {
+    border-bottom: 1px dotted #e6e6e6;
+}
+
+.menu-and-price span:nth-of-type(3) {
+    justify-self: end;
+    font-size: 0.95rem;
+}
+
+.menu-description {
+    font-size: 0.8rem;
+}
+
+hr {
+    width: 50%;
+    border: none;
+    border-top: 3px double #e6e6e6;
+    overflow: visible;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 5rem;
+}
+
+hr:after {
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: -1.55rem;
+}
+
+#about p {
+    width: 50%;
+    margin: auto;
+    line-height: 1.4rem;
+}
+
+#contact-details {
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-column-gap: 30px;
+}
+
+.contact-symbol {
+    display: inline-block;
+    width: 40px;
+    font-size: 2rem;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+}
+
+#maps-ie {
+    width: 100%;
+}
+
 footer {
     align-self: center;
-    font-family: 'Quicksand', sans-serif;
     font-size: .915rem;
     font-weight: 600;
 }
