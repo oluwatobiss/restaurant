@@ -52,6 +52,16 @@ a {
     color: #93c572;
 }
 
+a:hover {
+    color: #e75a18;
+}
+
+.active-page {
+    color: #e75a18;
+    padding-bottom: 5px;
+    border-bottom: 3.2px solid #e75a18;
+}
+
 #homepage, footer {
     text-align: center;
 }
@@ -166,6 +176,14 @@ hr:after {
     grid-column-gap: 30px;
 }
 
+#map-image {
+    border: 2px outset #9efd38;
+    background-image: url(https://cdn.pixabay.com/photo/2020/01/23/16/08/egypt-4788028_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
+
 .contact-symbol {
     display: inline-block;
     width: 40px;
@@ -188,8 +206,4 @@ footer {
 
 footer a {
     color: #454d32;
-}
-
-footer a:hover {
-    color: #e75a18;
 }
