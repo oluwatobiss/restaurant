@@ -208,14 +208,14 @@ orderNowBtn.addEventListener("click", showMenuPage);
 
 function showHomePage() {
     navLinks.forEach(i => {
-        i.children[0].classList.remove("active-page")
+        i.children[0].classList.remove("active-page");
     });
     navLinks[0].children[0].classList.add("active-page");
     contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.homepage);
 }
 function showThisPage() {
     navLinks.forEach(i => {
-        i.children[0].classList.remove("active-page")
+        i.children[0].classList.remove("active-page");
     });
 
     switch (this.innerText) {
@@ -238,7 +238,7 @@ function showThisPage() {
 }
 function showMenuPage() {
     navLinks.forEach(i => {
-        i.children[0].classList.remove("active-page")
+        i.children[0].classList.remove("active-page");
     });
     navLinks[1].children[0].classList.add("active-page");
     contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.menuPage);
