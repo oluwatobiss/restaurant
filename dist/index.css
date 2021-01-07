@@ -152,6 +152,7 @@ hr:after {
     padding: 0 4px;
     position: relative;
     top: -1.55rem;
+    color: var(--primary-white);
 }
 
 #about p {
