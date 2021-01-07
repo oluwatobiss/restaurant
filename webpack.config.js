@@ -6,6 +6,7 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
-  devtool: "source-map",
-  mode: "development"
+  /* Settings for easier debugging during development */
+  mode: "production",
+  // devtool: "source-map"
 };
