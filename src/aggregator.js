@@ -1,4 +1,4 @@
-export {createElement, appendObjects} from "./shared.js";
+export {shared} from "./shared.js";
 export {default as header} from "./header.js";
 export {default as homepage} from "./homepage";
 export {default as menuPage} from "./menu-page";

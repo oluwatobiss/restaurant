@@ -1,19 +1,14 @@
-function createElement(eleType, attributes) {
-    const element = document.createElement(eleType);
-
-    if (attributes) {
-        for(let key in attributes) {
-            element.setAttribute(key, attributes[key]);
+const shared = (() => {
+    return {
+        createElement: (eleType, node, attr) => {
+            const element = document.createElement(eleType);
+            if (node) {node.forEach(i => element.append(i));}
+            if (attr) {
+                for (let key in attr) {element.setAttribute(key, attr[key]);}
+            }
+            return element;
         }
     }
-    return element;
-}
+})();
 
-function appendObjects(parentObj, amtOfChildrenObjs, ...childrenObjs) {
-    const objsToAppend = childrenObjs;
-    for (let i = 0; i < amtOfChildrenObjs; i++) {
-        parentObj.append(objsToAppend[i]);
-    }
-}
-
-export {createElement, appendObjects};
+export {shared};

@@ -1,15 +1,12 @@
-import {createElement, appendObjects} from "./aggregator.js";
+import {shared} from "./aggregator.js";
 
-const header = createElement("h2");
-appendObjects(header, 1, "Welcome!");
+const homePageContent = (() => {
+    const header = shared.createElement("h2", ["Welcome!"]);
+    const introText = "Here at yummyFoods, you will find varieties of deliciously made foods to satisfy your appetite.";
+    const paragraph = shared.createElement("p", [introText]);
+    const button = shared.createElement("button", ["Order Now"], {type: "button"});
+    const homeSection = shared.createElement("section", [header, paragraph, button], {id: "homepage"});
+    return homeSection;
+})()
 
-const paragraph = createElement("p");
-appendObjects(paragraph, 1, "Here at yummyFoods, you will find varieties of deliciously made foods to satisfy your appetite.");
-
-const button = createElement("button", {type: "button"});
-appendObjects(button, 1, "Order Now");
-
-const homeSection = createElement("section", {id: "homepage"});
-appendObjects(homeSection, 3, header, paragraph, button);
-
-export default homeSection;
+export default homePageContent;

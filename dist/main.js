@@ -15,18 +15,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aggregator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aggregator.js */ "./src/aggregator.js");
 
 
-const aboutDummyText = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.";
+const aboutPageContent = (() => {
+    const aboutDummyText = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.";
+    const aboutHeader = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("h2", ["About Us"]);
+    const aboutPara = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("p", [aboutDummyText]);
+    const aboutSection = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("section", [aboutHeader, aboutPara], {id: "about"});
+    return aboutSection;
+})();
 
-const aboutHeader = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(aboutHeader, 1, "About Us");
-
-const aboutPara = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("p");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(aboutPara, 1, aboutDummyText);
-
-const aboutSection = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {id: "about"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(aboutSection, 2, aboutHeader, aboutPara);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (aboutSection);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (aboutPageContent);
 
 /***/ }),
 
@@ -38,8 +35,7 @@ const aboutSection = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElemen
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createElement": () => /* reexport safe */ _shared_js__WEBPACK_IMPORTED_MODULE_0__.createElement,
-/* harmony export */   "appendObjects": () => /* reexport safe */ _shared_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects,
+/* harmony export */   "shared": () => /* reexport safe */ _shared_js__WEBPACK_IMPORTED_MODULE_0__.shared,
 /* harmony export */   "header": () => /* reexport safe */ _header_js__WEBPACK_IMPORTED_MODULE_1__.default,
 /* harmony export */   "homepage": () => /* reexport safe */ _homepage__WEBPACK_IMPORTED_MODULE_2__.default,
 /* harmony export */   "menuPage": () => /* reexport safe */ _menu_page__WEBPACK_IMPORTED_MODULE_3__.default,
@@ -77,35 +73,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aggregator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aggregator.js */ "./src/aggregator.js");
 
 
-const contactHeader = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactHeader, 1, "Contact Us");
-
-const mapImage = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {id: "map-image"});
-
-function createContactInfo(HTMLCode, contactText) {
-    const contactInfoSymbolSpan = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {class: "contact-symbol"});
-    (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactInfoSymbolSpan, 1, HTMLCode);
+const contactPageContent = (() => {
+    const contactHeader = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("h2", ["Contact Us"]);
+    const mapImage = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("div", null, {id: "map-image"});
     
-    const contactInfoPara = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {class: "contact-info"});
-    (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactInfoPara, 2, contactInfoSymbolSpan, contactText)
+    function createContactInfoPara(HTMLCode, contactText) {
+        const contactInfoSymbolSpan = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("span", [HTMLCode], {class: "contact-symbol"});
+        const contactInfoPara = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("p", [contactInfoSymbolSpan, contactText], {class: "contact-info"});
+        return contactInfoPara;
+    }
+    const address = createContactInfoPara("\u{1F588}", " Nile River, River, Northeastern Africa");
+    const email = createContactInfoPara("\u{1F582}", " contact@yummyfoods.com");
+    const phone = createContactInfoPara("\u{260F}", " +012 34 5678 9012");
+    
+    const contactInfoDiv = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("div", [address, email, phone]);
+    const contactDetailsArticle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("article", [mapImage, contactInfoDiv], {id: "contact-details"});
+    const contactSection = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("section", [contactHeader, contactDetailsArticle], {id: "contact"});
+    return contactSection;
+})();
 
-    return contactInfoPara;
-}
-
-const address = createContactInfo("\u{1F588}", " Nile River, River, Northeastern Africa");
-const email = createContactInfo("\u{1F582}", " contact@yummyfoods.com");
-const phone = createContactInfo("\u{260F}", " +012 34 5678 9012");
-
-const contactInfoDiv = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("div");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactInfoDiv, 3, address, email, phone);
-
-const contactDetailsArticle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {id: "contact-details"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactDetailsArticle, 2, mapImage, contactInfoDiv);
-
-const contactSection = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {id: "contact"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactSection, 2, contactHeader, contactDetailsArticle);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (contactSection);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (contactPageContent);
 
 /***/ }),
 
@@ -119,15 +106,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-const footerEle = document.createElement("footer");
-const anchorEle = document.createElement("a");
+/* harmony import */ var _aggregator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aggregator.js */ "./src/aggregator.js");
 
-anchorEle.setAttribute("href", "https://www.codesweetly.com/");
-anchorEle.append("Created by Oluwatobi Sofela");
 
-footerEle.appendChild(anchorEle);
+const footerAreaContent = (() => {
+    const anchorEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("a", ["Created by Oluwatobi Sofela"], {href: "https://www.codesweetly.com/"});
+    const footerEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("footer", [anchorEle]);
+    return footerEle;
+})();
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (footerEle);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (footerAreaContent);
 
 /***/ }),
 
@@ -144,45 +132,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aggregator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aggregator.js */ "./src/aggregator.js");
 
 
-const yummySpanEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("span");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(yummySpanEle, 1, "yummy");
+const headerAreaContent = (() => {
+    const yummySpanEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("span", ["yummy"]);
+    const foodsSpanEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("span", ["Foods"]);
+    const logoAnchorEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("a", [yummySpanEle, foodsSpanEle], {href: "#", id: "logo"});
+    const ulEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("ul", null, {id: "nav-links"});
 
-const foodsSpanEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("span");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(foodsSpanEle, 1, "Foods");
+    const menus = ["HOME", "MENU", "ABOUT", "CONTACT"];
+    menus.forEach(createMenuLink);
 
-const logoAnchorEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {href: "#", id: "logo"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(logoAnchorEle, 2, yummySpanEle, foodsSpanEle);
+    function createMenuLink(i) {
+        const liEle = document.createElement("li");
+        const anchorEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("a", [i], {href: "#"});
+        if (i === "HOME") {anchorEle.classList.add("active-page")};
+        liEle.append(anchorEle);
+        ulEle.append(liEle);
+    }
+    const navEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("nav", [ulEle]);
+    const headerEle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("header", [logoAnchorEle, navEle], {id: "nav-header"});
+    return headerEle;
+})();
 
-const navEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("nav");
-const ulEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {id: "nav-links"});
-
-const homeLiEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("li");
-const homeAnchorEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {href: "#", class: "active-page"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(homeAnchorEle, 1, "HOME");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(homeLiEle, 1, homeAnchorEle);
-
-const menuLiEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("li");
-const menuAnchorEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {href: "#"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(menuAnchorEle, 1, "MENU");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(menuLiEle, 1, menuAnchorEle);
-
-const aboutLiEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("li");
-const aboutAnchorEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {href: "#"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(aboutAnchorEle, 1, "ABOUT");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(aboutLiEle, 1, aboutAnchorEle);
-
-const contactLiEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("li");
-const contactAnchorEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {href: "#"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactAnchorEle, 1, "CONTACT");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(contactLiEle, 1, contactAnchorEle);
-
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(ulEle, 4, homeLiEle, menuLiEle, aboutLiEle, contactLiEle);
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(navEle, 1, ulEle);
-
-const headerEle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {id: "nav-header"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(headerEle, 2, logoAnchorEle, navEle);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerEle);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerAreaContent);
 
 /***/ }),
 
@@ -199,19 +170,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aggregator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aggregator.js */ "./src/aggregator.js");
 
 
-const header = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(header, 1, "Welcome!");
+const homePageContent = (() => {
+    const header = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("h2", ["Welcome!"]);
+    const introText = "Here at yummyFoods, you will find varieties of deliciously made foods to satisfy your appetite.";
+    const paragraph = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("p", [introText]);
+    const button = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("button", ["Order Now"], {type: "button"});
+    const homeSection = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("section", [header, paragraph, button], {id: "homepage"});
+    return homeSection;
+})()
 
-const paragraph = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("p");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(paragraph, 1, "Here at yummyFoods, you will find varieties of deliciously made foods to satisfy your appetite.");
-
-const button = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {type: "button"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(button, 1, "Order Now");
-
-const homeSection = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {id: "homepage"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(homeSection, 3, header, paragraph, button);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homeSection);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homePageContent);
 
 /***/ }),
 
@@ -228,6 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 const contentDiv = document.getElementById("content");
 contentDiv.append(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.header, _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.homepage, _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.footer);
 
+/*======= Listeners =======*/
 const logoLink = Array.from(document.querySelector("#logo").children);
 logoLink.forEach(i => i.addEventListener("click", showHomePage));
 
@@ -244,27 +213,29 @@ function showHomePage() {
     navLinks[0].children[0].classList.add("active-page");
     contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.homepage);
 }
-
 function showThisPage() {
     navLinks.forEach(i => {
         i.children[0].classList.remove("active-page")
     });
 
-    if (this.innerText === "HOME") {
-        this.children[0].classList.add("active-page");
-        contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.homepage);
-    } else if (this.innerText === "MENU") {
-        this.children[0].classList.add("active-page");
-        contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.menuPage);
-    } else if (this.innerText === "ABOUT") {
-        this.children[0].classList.add("active-page");
-        contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.aboutPage);
-    } else if (this.innerText === "CONTACT") {
-        this.children[0].classList.add("active-page");
-        contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.contactPage);
+    switch (this.innerText) {
+        case "HOME":
+            this.children[0].classList.add("active-page");
+            contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.homepage);
+            break;
+        case "MENU":
+            this.children[0].classList.add("active-page");
+            contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.menuPage);
+            break;
+        case "ABOUT":
+            this.children[0].classList.add("active-page");
+            contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.aboutPage);
+            break;
+        case "CONTACT":
+            this.children[0].classList.add("active-page");
+            contentDiv.children[1].replaceWith(_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.contactPage);
     }
 }
-
 function showMenuPage() {
     navLinks.forEach(i => {
         i.children[0].classList.remove("active-page")
@@ -288,70 +259,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aggregator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aggregator.js */ "./src/aggregator.js");
 
 
-function createMenuPriceArticle(menu, price, descrip) {
-    const menuSpan = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("span");
-    (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(menuSpan, 1, menu);
-    
-    const dashSpan = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("span");
-    
-    const priceSpan = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("span");
-    (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(priceSpan, 1, price);
-    
-    const menuPriceDiv = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {class: "menu-and-price"});
-    (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(menuPriceDiv, 3, menuSpan, dashSpan, priceSpan);
-    
-    const menuDescripPara = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {class: "menu-description"});
-    (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(menuDescripPara, 1, descrip);
-    
-    const menuPriceArticle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("article");
-    (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(menuPriceArticle, 2, menuPriceDiv, menuDescripPara);
+const menuPageContent = (() => {
+    const menuDummyText = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.";
+    function createMenuPriceArticle(menu, price, descrip) {
+        const menuSpan = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("span", [menu]);
+        const dashSpan = document.createElement("span");
+        const priceSpan = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("span", [price]);
+        const menuPriceDiv = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("div", [menuSpan, dashSpan, priceSpan], {class: "menu-and-price"});
+        const menuDescripPara = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("p", [descrip], {class: "menu-description"});
+        const menuPriceArticle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("article", [menuPriceDiv, menuDescripPara]);
+        return menuPriceArticle;
+    }
+    /*======= Main Menu =======*/
+    const mainMenuHeader = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("h2", ["Main Menu"]);
+    const specialFriedRice = createMenuPriceArticle("Special Fried Rice", "$15", menuDummyText);
+    const sweetSourChicMixVeg = createMenuPriceArticle("Sweet and Sour Chicken with Mix Vegetables", "$18.50", menuDummyText);
+    const spagBeefCurry = createMenuPriceArticle("Spaghetti with Beef Curry", "$7.55", menuDummyText);
+    const mainMenusArticle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("article", [mainMenuHeader, specialFriedRice, sweetSourChicMixVeg, spagBeefCurry], {class: "menus"});
+    /*======= Dessert Menu =======*/
+    const dessertMenuHeader = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("h2", ["Dessert"]);
+    const friPlaBaIceCr = createMenuPriceArticle("Fried Plantain with Banana Ice Cream", "$7.15", menuDummyText);
+    const coIceCr = createMenuPriceArticle("Coconut Ice Cream", "$4.50", menuDummyText);
+    const choIceCrTop = createMenuPriceArticle("Chocolate Ice Cream with Toppings", "$5.99", menuDummyText);
+    const dessertMenusArticle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("article", [dessertMenuHeader, friPlaBaIceCr, coIceCr, choIceCrTop], {class: "menus"});
+    /*======= Soups Menu =======*/
+    const soupsMenuHeader = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("h2", ["Soups"]);
+    const chicNooSoup = createMenuPriceArticle("Chicken Noodles Soup", "$3.35", menuDummyText);
+    const sweFiPepSoup = createMenuPriceArticle("Sweet Fish Pepper Soup", "$5", menuDummyText);
+    const specialSoup = createMenuPriceArticle("Special Soup", "$10.50", menuDummyText);
+    const soupsMenusArticle = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("article", [soupsMenuHeader, chicNooSoup, sweFiPepSoup, specialSoup], {class: "menus"});
+    /*==========================*/
+    const hr = () => document.createElement("hr");
+    const menuSection = _aggregator_js__WEBPACK_IMPORTED_MODULE_0__.shared.createElement("section", [mainMenusArticle, hr(), dessertMenusArticle, hr(), soupsMenusArticle], {id: "menu-page"});
+    return menuSection;
+})();
 
-    return menuPriceArticle;
-}
-
-const menuDummyText = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.";
-
-/*======= Main Menu =======*/
-const mainMenuHeader = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(mainMenuHeader, 1, "Main Menu");
-
-const specialFriedRice = createMenuPriceArticle("Special Fried Rice", "$15", menuDummyText);
-const sweetSourChicMixVeg = createMenuPriceArticle("Sweet and Sour Chicken with Mix Vegetables", "$18.50", menuDummyText);
-const spagBeefCurry = createMenuPriceArticle("Spaghetti with Beef Curry", "$7.55", menuDummyText);
-
-const mainMenusArticle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {class: "menus"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(mainMenusArticle, 4, mainMenuHeader, specialFriedRice, sweetSourChicMixVeg, spagBeefCurry);
-
-/*======= Dessert Menu =======*/
-const dessertMenuHeader = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(dessertMenuHeader, 1, "Dessert");
-
-const friPlaBaIceCr = createMenuPriceArticle("Fried Plantain with Banana Ice Cream", "$7.15", menuDummyText);
-const coIceCr = createMenuPriceArticle("Coconut Ice Cream", "$4.50", menuDummyText);
-const choIceCrTop = createMenuPriceArticle("Chocolate Ice Cream with Toppings", "$5.99", menuDummyText);
-
-const dessertMenusArticle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {class: "menus"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(dessertMenusArticle, 4, dessertMenuHeader, friPlaBaIceCr, coIceCr, choIceCrTop);
-
-/*======= Soups Menu =======*/
-const soupsMenuHeader = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2");
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(soupsMenuHeader, 1, "Soups");
-
-const chicNooSoup = createMenuPriceArticle("Chicken Noodles Soup", "$3.35", menuDummyText);
-const sweFiPepSoup = createMenuPriceArticle("Sweet Fish Pepper Soup", "$5", menuDummyText);
-const specialSoup = createMenuPriceArticle("Special Soup", "$10.50", menuDummyText);
-
-const soupsMenusArticle = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", {class: "menus"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(soupsMenusArticle, 4, soupsMenuHeader, chicNooSoup, sweFiPepSoup, specialSoup);
-
-/*==========================*/
-const hr1 = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr");
-const hr2 = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr");
-
-const menuSection = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {id: "menu-page"});
-(0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.appendObjects)(menuSection, 5, mainMenusArticle, hr1, dessertMenusArticle, hr2, soupsMenusArticle);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuSection);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuPageContent);
 
 /***/ }),
 
@@ -363,26 +306,20 @@ const menuSection = (0,_aggregator_js__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createElement": () => /* binding */ createElement,
-/* harmony export */   "appendObjects": () => /* binding */ appendObjects
+/* harmony export */   "shared": () => /* binding */ shared
 /* harmony export */ });
-function createElement(eleType, attributes) {
-    const element = document.createElement(eleType);
-
-    if (attributes) {
-        for(let key in attributes) {
-            element.setAttribute(key, attributes[key]);
+const shared = (() => {
+    return {
+        createElement: (eleType, node, attr) => {
+            const element = document.createElement(eleType);
+            if (node) {node.forEach(i => element.append(i));}
+            if (attr) {
+                for (let key in attr) {element.setAttribute(key, attr[key]);}
+            }
+            return element;
         }
     }
-    return element;
-}
-
-function appendObjects(parentObj, amtOfChildrenObjs, ...childrenObjs) {
-    const objsToAppend = childrenObjs;
-    for (let i = 0; i < amtOfChildrenObjs; i++) {
-        parentObj.append(objsToAppend[i]);
-    }
-}
+})();
 
 
 

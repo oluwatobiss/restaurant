@@ -1,9 +1,9 @@
-const footerEle = document.createElement("footer");
-const anchorEle = document.createElement("a");
+import {shared} from "./aggregator.js";
 
-anchorEle.setAttribute("href", "https://www.codesweetly.com/");
-anchorEle.append("Created by Oluwatobi Sofela");
+const footerAreaContent = (() => {
+    const anchorEle = shared.createElement("a", ["Created by Oluwatobi Sofela"], {href: "https://www.codesweetly.com/"});
+    const footerEle = shared.createElement("footer", [anchorEle]);
+    return footerEle;
+})();
 
-footerEle.appendChild(anchorEle);
-
-export default footerEle;
+export default footerAreaContent;
